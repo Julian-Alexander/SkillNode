@@ -77,7 +77,7 @@ router.post("/login", (req, res) => {
   User.findOne({ email }).then(user => {
     // Check for user
     if (!user) {
-        errors.email = "User not found"
+      errors.email = "User not found";
       return res.status(404).json(errors);
     }
 
@@ -104,7 +104,7 @@ router.post("/login", (req, res) => {
         //From past API logic text
         // res.json({ msg: "Success" });
       } else {
-          errors.password = "Password incorrect"
+        errors.password = "Password incorrect";
         return res.status(400).json(errors);
       }
     });
