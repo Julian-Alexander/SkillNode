@@ -112,7 +112,10 @@ const ProfileSchema = new Schema({
     },
     pinterest: {
       type: String
-    }
+    },
+    snapchat: {
+        type: String
+      }
   },
   date: {
     type: Date,
