@@ -11,15 +11,15 @@ class Register extends Component {
       errors: ""
     };
 
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange;
+    this.onSubmit = this.onSubmit;
   }
 
-  onChange(e) {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  onSubmit(e) {
+  onSubmit = (e) => {
     e.preventDefault();
 
     const newUser = {
@@ -27,7 +27,8 @@ class Register extends Component {
         email: this.state.email,
         password: this.state.password,
         password2: this.state.password2
-    }
+    };
+
     console.log(newUser);
   }
 
