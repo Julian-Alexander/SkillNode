@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import TextFieldGroup  from "../common/TextFieldGroup";
-import TextAreaFieldGroup  from "../common/TextAreaFieldGroup";
+import TextFieldGroup from "../common/TextFieldGroup";
+import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import Proptypes from "prop-types";
+import { addExperience } from "../../actions/profileActions";
 
 class AddExperience extends Component {
   constructor(props) {
@@ -20,29 +21,45 @@ class AddExperience extends Component {
       errors: {},
       disabled: false
     };
-    
+
     this.onChange = this.onChange;
     this.onSubmit = this.onSubmit;
     this.onCheck = this.onCheck;
   }
 
-  onSubmit = (e) => {
-      e.preventDefault();
-
-      console.log("submit");
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
   }
 
-  onChange = (e) => {
-      this.setState({[e.target.name]: e.target.value});
-  }
+  onSubmit = e => {
+    e.preventDefault();
 
-  onCheck = (e) => {
-      this.setState({
-          disabled: !this.state.disabled,
-          current: !this.state.current
-      });
-  }
-  
+    const expData = {
+      company: this.state.company,
+      title: this.state.title,
+      location: this.state.location,
+      from: this.state.from,
+      to: this.state.to,
+      current: this.state.current,
+      description: this.state.description
+    };
+
+    this.props.addExperience(expData, this.props.history);
+  };
+
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  onCheck = e => {
+    this.setState({
+      disabled: !this.state.disabled,
+      current: !this.state.current
+    });
+  };
+
   render() {
     const { errors } = this.state;
 
@@ -60,7 +77,7 @@ class AddExperience extends Component {
               </p>
               <small className="d-block pb-">* = required fields</small>
               <form onSubmit={this.onSubmit}>
-              <TextFieldGroup
+                <TextFieldGroup
                   placeholder="* Company"
                   name="company"
                   value={this.state.company}
@@ -96,7 +113,7 @@ class AddExperience extends Component {
                   value={this.state.to}
                   onChange={this.onChange}
                   error={errors.to}
-                  disabled={this.state.disabled ? 'disabled' : ''}
+                  disabled={this.state.disabled ? "disabled" : ""}
                 />
                 <div className="form-check mb-4">
                   <input
@@ -135,6 +152,7 @@ class AddExperience extends Component {
 }
 
 AddExperience.propTypes = {
+  addExperience: Proptypes.func.isRequired,
   profile: Proptypes.object.isRequired,
   errors: Proptypes.object.isRequired
 };
@@ -144,4 +162,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps)(withRouter(AddExperience));
+export default connect(
+  mapStateToProps,
+  { addExperience }
+)(withRouter(AddExperience));
