@@ -13,6 +13,8 @@ class Experience extends Component {
       <tr key={exp._id}>
         <td>{exp.company}</td>
         <td>{exp.title}</td>
+        <td>{exp.location}</td>
+        <td>{exp.description}</td>
         <td>
           <Moment format="YYYY/MM/DD">{exp.from}</Moment> -
           {exp.to === null ? (
@@ -34,6 +36,8 @@ class Experience extends Component {
             <tr>
               <th>Company</th>
               <th>Title</th>
+              <th>Location</th>
+              <th>Description</th>
               <th>Years</th>
               <th />
             </tr>
