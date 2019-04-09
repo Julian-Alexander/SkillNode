@@ -20,6 +20,13 @@ class Register extends Component {
     this.onSubmit = this.onSubmit;
   }
 
+ // This sends you to the dashboard if you go to /register while logged in
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
