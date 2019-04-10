@@ -30,7 +30,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Test message
-//app.get("/", (req, res) => res.send("Hello yall"));
+//app.get("/", (req, res) => res.send("VAPE NAYSH YALL"));
 
 // Use Routes
 app.use("/api/users", users);
