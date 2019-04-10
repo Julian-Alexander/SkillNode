@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const client_id = require("../../config/keys").client_id;
 const client_secret = require("../../config/keys").client_secret;
@@ -12,7 +12,7 @@ class ProfileGithub extends Component {
       clientId: client_id,
       clientSecret: client_secret,
       count: 5,
-      sort: 'created: asc',
+      sort: "created: asc",
       repos: []
     };
   }

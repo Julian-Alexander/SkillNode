@@ -49,7 +49,7 @@ class CreateProfile extends Component {
       // Bring skills array back to CSV
       const skillsCSV = profile.skills.join(",");
 
-      // If profile field doesn't exist, make empty string
+      // If profile field doesn"t exist, make empty string
       profile.company = !isEmpty(profile.company) ? profile.company : "";
       profile.website = !isEmpty(profile.website) ? profile.website : "";
       profile.location = !isEmpty(profile.location) ? profile.location : "";
