@@ -15,9 +15,6 @@ class Register extends Component {
       password2: "",
       errors: ""
     };
-
-    this.onChange = this.onChange;
-    this.onSubmit = this.onSubmit;
   }
 
  // This sends you to the dashboard if you go to /register while logged in

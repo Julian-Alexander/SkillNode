@@ -20,10 +20,6 @@ class AddEducation extends Component {
       errors: {},
       disabled: false
     };
-
-    this.onChange = this.onChange;
-    this.onSubmit = this.onSubmit;
-    this.onCheck = this.onCheck;
   }
 
   componentWillReceiveProps(nextProps) {

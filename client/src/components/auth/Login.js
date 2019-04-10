@@ -12,9 +12,6 @@ class Login extends Component {
       password: "",
       errors: ""
     };
-
-    this.onChange = this.onChange;
-    this.onSubmit = this.onSubmit;
   }
 
   // This sends you to the dashboard if you go to /login while logged in

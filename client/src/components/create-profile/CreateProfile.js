@@ -28,9 +28,6 @@ class CreateProfile extends Component {
       instagram: "",
       errors: {}
     };
-
-    this.onChange = this.onChange;
-    this.onSubmit = this.onSubmit;
   }
 
   componentWillReceiveProps(nextProps) {
