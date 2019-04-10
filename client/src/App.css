@@ -38,6 +38,6 @@ img {
   color: #bbb !important;
 }
 
-.nav-link .click {
-  cursor: pointer;
+#click {
+ cursor: pointer; 
 }
