@@ -28,5 +28,8 @@
   "devDependencies": {
     "node-gyp": "^3.8.0",
     "nodemon": "^1.18.10"
+  },
+  "engines": {
+    "yarn": "1.15.2"
   }
 }
