@@ -13,22 +13,22 @@ class Landing extends Component {
 
   render() {
     return (
-      <div class="landing">
-        <div class="dark-overlay landing-inner text-light">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <h1 class="display-3 mb-4">Social Network</h1>
-                <p class="lead">
+      <div className="landing">
+        <div className="dark-overlay landing-inner text-light">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h1 className="display-3 mb-4">SKILL|\|ODE</h1>
+                <p className="lead">
                   {" "}
-                  Create a profile/portfolio, share posts and connect with other
-                  members
+                  Create a profile, showcase your skills, share posts and connect with the 
+                  |\|ode
                 </p>
                 <hr />
-                <Link to="/register" class="btn btn-lg btn-info mr-2">
+                <Link to="/register" className="btn btn-lg btn-info mr-2">
                   Sign Up
                 </Link>
-                <Link to="/login" class="btn btn-lg btn-light">
+                <Link to="/login" className="btn btn-lg btn-light">
                   Login
                 </Link>
               </div>

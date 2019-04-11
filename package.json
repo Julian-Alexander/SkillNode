@@ -1,7 +1,7 @@
 {
-  "name": "socialnetwork",
+  "name": "skillnode",
   "version": "1.0.0",
-  "description": "socialnetwork",
+  "description": "skillnode",
   "main": "server.js",
   "author": "JulianAlexander",
   "license": "MIT",
