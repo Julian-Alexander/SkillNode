@@ -1,6 +1,6 @@
 module.exports = {
     mongoURI:
-      "mongodb://JulianAlexander:database123@ds233596.mlab.com:33596/snet",
+      "mongodb+srv://JulianAlexander:data123base@proto-prometheum-innova-cluster-ghwjk.mongodb.net/test?retryWrites=true",
     secretOrKey: "secret",
   };
   
